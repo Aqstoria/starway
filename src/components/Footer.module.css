@@ -1,0 +1,98 @@
+.footer {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding-top: 60px;
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 40px;
+  padding-bottom: 60px;
+}
+
+.column h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.column h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 30px;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.logoStar {
+  color: var(--accent-color);
+}
+
+.logoSubText {
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.links li {
+  margin-bottom: 10px;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.links a:hover {
+  color: var(--accent-color);
+  padding-left: 5px;
+}
+
+.contactList li {
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+}
+
+.bottomBar {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 992px) {
+  .footerContent {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .footerContent {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,101 @@
+.header {
+  width: 100%;
+  z-index: 1000;
+}
+
+.topBar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.topBarContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 20px;
+}
+
+.nav {
+  background-color: var(--white);
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoStar {
+  color: var(--accent-color);
+}
+
+.logoSubText {
+  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLinks a {
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.navLinks a:hover {
+  color: var(--accent-color);
+}
+
+.mobileToggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mobileToggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+@media (max-width: 992px) {
+  .navLinks, .btn-primary {
+    display: none;
+  }
+  
+  .mobileToggle {
+    display: flex;
+  }
+  
+  .contactInfo span:not(:first-child) {
+    display: none;
+  }
+}
