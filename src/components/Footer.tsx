@@ -40,7 +40,7 @@ export default function Footer() {
         <div className={styles.column}>
           <h3>Contact Info</h3>
           <ul className={styles.contactList}>
-            <li>📍 123 Starway Plaza, Punjab, Pakistan</li>
+            <li>📍 Unit UF-75 1st Floor Cantonment Shoping Mall Rashid Minhas Road Faisal Cantonment Karachi</li>
             <li>📞 +92 123 4567890</li>
             <li>📧 info@starwayimmigration.com</li>
           </ul>

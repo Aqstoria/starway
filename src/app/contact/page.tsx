@@ -23,7 +23,7 @@ export default function ContactPage() {
                   <span className={styles.icon}>📍</span>
                   <div>
                     <h4>Our Location</h4>
-                    <p>123 Starway Plaza, Main Blvd, Punjab, Pakistan</p>
+                    <p>Unit UF-75 1st Floor Cantonment Shoping Mall Rashid Minhas Road Faisal Cantonment Karachi</p>
                   </div>
                 </div>
                 <div className={styles.infoCard}>
