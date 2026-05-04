@@ -91,3 +91,93 @@
     grid-template-columns: 1fr;
   }
 }
+
+.cardBtns {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.cardBtns > a {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.outlineBtn {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: var(--transition);
+  display: inline-block;
+  text-align: center;
+}
+
+.outlineBtn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+}
+
+.mainContent h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.mainContent h2 span {
+  color: var(--primary-color);
+}
+
+.mainContent h3 {
+  font-size: 1.5rem;
+  margin: 30px 0 15px;
+}
+
+.mainContent p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.serviceList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.serviceList li {
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.ctaBox {
+  background-color: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  border-left: 5px solid var(--primary-color);
+  height: fit-content;
+}
+
+.ctaBox h3 {
+  margin-bottom: 15px;
+}
+
+.ctaBox p {
+  margin-bottom: 25px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+

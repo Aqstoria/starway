@@ -41,8 +41,8 @@ export default function Footer() {
           <h3>Contact Info</h3>
           <ul className={styles.contactList}>
             <li>📍 Unit UF-75 1st Floor Cantonment Shoping Mall Rashid Minhas Road Faisal Cantonment Karachi</li>
-            <li>📞 +92 123 4567890</li>
-            <li>📧 info@starwayimmigration.com</li>
+            <li>📞 03201173129</li>
+            <li>📧 starwaytrader@gmail.com</li>
           </ul>
         </div>
       </div>

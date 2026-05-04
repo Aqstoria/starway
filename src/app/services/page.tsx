@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 export default function ServicesPage() {
   const services = [
-    { title: "Student Visa", icon: "🎓", desc: "Expert guidance for students looking to study abroad in world-class universities." },
-    { title: "Tourist Visa", icon: "✈️", desc: "Seamless visa processing for your next vacation or family visit anywhere in the world." },
-    { title: "Business Visa", icon: "💼", desc: "Professional assistance for entrepreneurs and professionals expanding their horizons." },
-    { title: "Work Permit", icon: "🛠️", desc: "Reliable support for skilled workers seeking career opportunities internationally." },
-    { title: "Family Visa", icon: "🏠", desc: "Bringing families together with dedicated residency and spouse visa services." },
-    { title: "PR Services", icon: "🌏", desc: "Long-term pathways for permanent residency and citizenship in top countries." }
+    { title: "Student Visa", icon: "🎓", desc: "Expert guidance for students looking to study abroad in world-class universities.", slug: "student-visa" },
+    { title: "Tourist Visa", icon: "✈️", desc: "Seamless visa processing for your next vacation or family visit anywhere in the world.", slug: "tourist-visa" },
+    { title: "Business Visa", icon: "💼", desc: "Professional assistance for entrepreneurs and professionals expanding their horizons.", slug: "business-visa" },
+    { title: "Work Permit", icon: "🛠️", desc: "Reliable support for skilled workers seeking career opportunities internationally.", slug: "work-permit" },
+    { title: "Family Visa", icon: "🏠", desc: "Bringing families together with dedicated residency and spouse visa services.", slug: "family-visa" },
+    { title: "PR Services", icon: "🌏", desc: "Long-term pathways for permanent residency and citizenship in top countries.", slug: "pr-services" }
   ];
 
   return (
@@ -35,7 +35,10 @@ export default function ServicesPage() {
                     <li>✓ Interview coaching</li>
                   </ul>
                 </div>
-                <Link href="/contact" className="btn-primary">Enquire Now</Link>
+                <div className={styles.cardBtns}>
+                  <Link href={`/services/${service.slug}`} className="btn-primary">Learn More</Link>
+                  <Link href="/contact" className={styles.outlineBtn}>Enquire</Link>
+                </div>
               </div>
             ))}
           </div>

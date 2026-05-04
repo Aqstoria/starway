@@ -30,14 +30,14 @@ export default function ContactPage() {
                   <span className={styles.icon}>📞</span>
                   <div>
                     <h4>Phone Number</h4>
-                    <p>+92 123 4567890</p>
+                    <p>03201173129</p>
                   </div>
                 </div>
                 <div className={styles.infoCard}>
                   <span className={styles.icon}>✉️</span>
                   <div>
                     <h4>Email Address</h4>
-                    <p>info@starwayimmigration.com</p>
+                    <p>starwaytrader@gmail.com</p>
                   </div>
                 </div>
               </div>
