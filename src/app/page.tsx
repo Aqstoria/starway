@@ -105,18 +105,25 @@ export default function Home() {
           </div>
           <div className={styles.countryGrid}>
             {[
-              { name: "Germany", flag: "🇩🇪", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa"] },
-              { name: "UK", flag: "🇬🇧", services: ["Visitor Visa", "Student Visa & Admission", "Immigration", "Family Visa"] },
-              { name: "Qatar", flag: "🇶🇦", services: ["Visitor Visa", "Work Visa", "Freelance Visa", "Business Setup"] },
-              { name: "Australia", flag: "🇦🇺", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
-              { name: "USA", flag: "🇺🇸", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa", "Business Visa"] },
-              { name: "Canada", flag: "🇨🇦", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
-              { name: "France", flag: "🇫🇷", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
-              { name: "Finland", flag: "🇫🇮", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] }
+              { name: "Germany", code: "de", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa"] },
+              { name: "UK", code: "gb", services: ["Visitor Visa", "Student Visa & Admission", "Immigration", "Family Visa"] },
+              { name: "Qatar", code: "qa", services: ["Visitor Visa", "Work Visa", "Freelance Visa", "Business Setup"] },
+              { name: "Australia", code: "au", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
+              { name: "USA", code: "us", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa", "Business Visa"] },
+              { name: "Canada", code: "ca", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
+              { name: "France", code: "fr", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
+              { name: "Finland", code: "fi", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] }
             ].map((country, i) => (
               <div key={i} className={styles.countryCard}>
                 <div className={styles.countryHeader}>
-                  <span className={styles.flag}>{country.flag}</span>
+                  <div className={styles.flagWrapper}>
+                    <img 
+                      src={`https://flagcdn.com/w80/${country.code}.png`} 
+                      alt={country.name}
+                      className={styles.flagImg}
+                    />
+                    <span className={styles.countryCode}>{country.code.toUpperCase()}</span>
+                  </div>
                   <div>
                     <span className={styles.visaServiceLabel}>Visa Service</span>
                     <h3>{country.name}</h3>

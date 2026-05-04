@@ -7,8 +7,8 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <div className={`container ${styles.topBarContent}`}>
           <div className={styles.contactInfo}>
-            <span>📧 info@starwayimmigration.com</span>
-            <span>📞 +92 123 4567890</span>
+            <span>📧 starwaytrader@gmail.com</span>
+            <span>📞 03201173129</span>
             <span>🕒 Mon - Fri 11am to 7pm</span>
           </div>
           <div className={styles.socials}>
