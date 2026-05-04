@@ -123,5 +123,26 @@
 @media (max-width: 992px) {
   .aboutGrid {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .aboutImage {
+    height: 350px;
+    order: -1;
   }
 }
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 60px 0;
+  }
+  
+  .pageHeader h1 {
+    font-size: 2.2rem;
+  }
+  
+  .missionVision {
+    grid-template-columns: 1fr;
+  }
+}
+

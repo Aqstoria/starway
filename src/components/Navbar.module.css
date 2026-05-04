@@ -87,15 +87,70 @@
 }
 
 @media (max-width: 992px) {
-  .navLinks, .btn-primary {
-    display: none;
+  .topBarContent {
+    justify-content: center;
   }
   
+  .hideMobile {
+    display: none;
+  }
+
+  .navContent {
+    position: relative;
+  }
+
+  .navMenu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 100px 30px;
+    gap: 40px;
+    transition: var(--transition);
+    z-index: 999;
+  }
+
+  .navMenu.active {
+    right: 0;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .mobileToggle {
     display: flex;
+    z-index: 1001;
+    position: relative;
+  }
+
+  .toggleActive span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .toggleActive span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggleActive span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
   
-  .contactInfo span:not(:first-child) {
-    display: none;
+  .mobileApplyBtn {
+    width: 100%;
+    text-align: center;
   }
 }
+
+@media (max-width: 576px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+}
+

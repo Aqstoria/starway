@@ -476,8 +476,51 @@
   font-size: 0.9rem;
 }
 
+@media (max-width: 992px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .aboutImage {
+    height: 350px;
+    order: -1;
+  }
+}
+
 @media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+  
+  .heroBtns {
+    flex-direction: column;
+  }
+  
   .testimonialGrid {
     grid-template-columns: 1fr;
   }
+  
+  .detailedFeaturesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .logoGrid {
+    justify-content: center;
+  }
 }
+
+@media (max-width: 576px) {
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 1.8rem;
+  }
+  
+  .statItem h3 {
+    font-size: 2rem;
+  }
+}
+

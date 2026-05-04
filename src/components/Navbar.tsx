@@ -1,7 +1,14 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <header className={styles.header}>
       <div className={styles.topBar}>
@@ -9,7 +16,7 @@ export default function Navbar() {
           <div className={styles.contactInfo}>
             <span>📧 starwaytrader@gmail.com</span>
             <span>📞 03201173129</span>
-            <span>🕒 Mon - Fri 11am to 7pm</span>
+            <span className={styles.hideMobile}>🕒 Mon - Fri 11am to 7pm</span>
           </div>
           <div className={styles.socials}>
             {/* Social links can be added here */}
@@ -24,16 +31,17 @@ export default function Navbar() {
             <span className={styles.logoSubText}>IMMIGRATION</span>
           </Link>
           
-          <ul className={styles.navLinks}>
-            <li><Link href="/">Home</Link></li>
-            <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/services">Services</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
+          <div className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>
+            <ul className={styles.navLinks}>
+              <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+              <li><Link href="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+              <li><Link href="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+              <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+            </ul>
+            <Link href="/contact" className={`btn-primary ${styles.mobileApplyBtn}`} onClick={() => setIsOpen(false)}>Apply Now</Link>
+          </div>
           
-          <Link href="/contact" className="btn-primary">Apply Now</Link>
-          
-          <button className={styles.mobileToggle}>
+          <button className={`${styles.mobileToggle} ${isOpen ? styles.toggleActive : ''}`} onClick={toggleMenu}>
             <span></span>
             <span></span>
             <span></span>
@@ -43,3 +51,4 @@ export default function Navbar() {
     </header>
   );
 }
+

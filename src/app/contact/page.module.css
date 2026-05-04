@@ -115,5 +115,21 @@
 @media (max-width: 992px) {
   .contactGrid {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 }
+
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: 60px 0;
+  }
+  
+  .pageHeader h1 {
+    font-size: 2.2rem;
+  }
+  
+  .contactForm {
+    padding: 30px 20px;
+  }
+}
+
