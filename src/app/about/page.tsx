@@ -36,8 +36,12 @@ export default function AboutPage() {
               </div>
             </div>
             <div className={styles.aboutImage}>
-               {/* Placeholder for about page specific image */}
-               <div className={styles.placeholderImg}></div>
+               <Image 
+                 src="/who we are.png" 
+                 alt="About Starway Immigration" 
+                 fill 
+                 className={styles.aboutImg}
+               />
             </div>
           </div>
         </div>

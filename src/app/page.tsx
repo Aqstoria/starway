@@ -70,8 +70,12 @@ export default function Home() {
               <span>Years of Experience</span>
             </div>
             <div className={styles.imgFrame}></div>
-            {/* You can replace this with another generated image later */}
-            <div className={styles.placeholderImg}></div>
+            <Image 
+              src="/who we are.png" 
+              alt="Who We Are" 
+              fill 
+              className={styles.aboutImg}
+            />
           </div>
         </div>
       </section>
