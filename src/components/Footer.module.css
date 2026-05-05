@@ -54,15 +54,54 @@
 .description {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.socialBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.socialBtn:hover {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 180, 0, 0.3);
 }
 
 .links li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .links a {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.linkArrow {
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+  color: var(--accent-color);
 }
 
 .links a:hover {
@@ -70,16 +109,57 @@
   padding-left: 5px;
 }
 
-.contactList li {
-  margin-bottom: 15px;
+.links a:hover .linkArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.contactIconCircle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(255, 180, 0, 0.15);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover .contactIconCircle {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.contactLink {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.contactLink:hover {
+  color: var(--accent-color);
 }
 
 .bottomBar {
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 20px 0;
-  text-align: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 25px 0;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.05);

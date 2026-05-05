@@ -414,6 +414,9 @@ export default function Home() {
       {/* Partners & Logos */}
       <section className={styles.partners}>
         <div className="container">
+          <div className={styles.partnersTitle}>
+            <span>Official University & Enrollment Partners</span>
+          </div>
           <div className={styles.logoGrid}>
             <div className={styles.logoItem}>UWE Bristol</div>
             <div className={styles.logoItem}>University of East Anglia</div>

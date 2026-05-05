@@ -68,6 +68,12 @@
   color: var(--text-muted);
 }
 
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
 .navLinks {
   display: flex;
   gap: 30px;
