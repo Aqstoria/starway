@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingSupport from "@/components/FloatingSupport";
 
 export const metadata: Metadata = {
   title: "Starway Immigration | Dedicated Visa & Immigration Consultancy",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingSupport />
       </body>
     </html>
   );

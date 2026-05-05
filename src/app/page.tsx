@@ -1,8 +1,28 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Home() {
+  const [targetCountry, setTargetCountry] = useState('');
+  const [visaType, setVisaType] = useState('');
+  const [userPhone, setUserPhone] = useState('');
+
+  const handleCheckEligibility = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!targetCountry || !visaType) {
+      alert("Please select both a target country and visa type.");
+      return;
+    }
+    
+    // Construct WhatsApp message with target details
+    const text = `Hi Starway Immigration, I'd like to check my eligibility for a *${visaType}* to *${targetCountry}*. ${userPhone ? `My phone number is ${userPhone}.` : ''}`;
+    const whatsappUrl = `https://wa.me/923201173129?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   const services = [
     { title: "Student Visa", icon: "🎓", desc: "Expert guidance for students looking to study abroad in world-class universities." },
     { title: "Tourist Visa", icon: "✈️", desc: "Seamless visa processing for your next vacation or family visit anywhere in the world." },
@@ -14,7 +34,7 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
-      {/* Hero Section */}
+      {/* Premium Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroOverlay}></div>
         <Image 
@@ -25,11 +45,110 @@ export default function Home() {
           className={styles.heroImg}
         />
         <div className={`container ${styles.heroContent}`}>
-          <h1>Dedicated Immigration & Visa <br /><span>Consultancy Services</span></h1>
-          <p>Your gateway to global opportunities. We provide expert guidance for students, professionals, and families to achieve their international dreams.</p>
-          <div className={styles.heroBtns}>
-            <Link href="/contact" className="btn-primary">Apply Now</Link>
-            <Link href="/services" className={styles.btnOutline}>Our Services</Link>
+          <div className={styles.heroGrid}>
+            
+            {/* Left Content */}
+            <div className={styles.heroLeft}>
+              <div className={styles.heroBadge}>
+                <span>✨ CERTIFIED GLOBAL CONSULTANTS</span>
+              </div>
+              <h1 className={styles.heroTitle}>
+                Navigate Your Path to <br />
+                <span className={styles.gradientText}>Global Opportunities</span>
+              </h1>
+              <p className={styles.heroDescription}>
+                Starway Immigration is a premium, high-success consultancy providing professional, certified pathways for students, professionals, and families worldwide. Your dreams are our destination.
+              </p>
+              
+              <div className={styles.heroBtns}>
+                <Link href="/contact" className="btn-primary">Book Consultation</Link>
+                <Link href="/services" className={styles.btnOutline}>Our Services</Link>
+              </div>
+
+              {/* Trust Stats Indicator */}
+              <div className={styles.heroStats}>
+                <div className={styles.miniStat}>
+                  <strong>99.2%</strong>
+                  <span>Success Rate</span>
+                </div>
+                <div className={styles.miniStat}>
+                  <strong>10,000+</strong>
+                  <span>Happy Clients</span>
+                </div>
+                <div className={styles.miniStat}>
+                  <strong>10+</strong>
+                  <span>Destinations</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Content - Eligibility Form Widget */}
+            <div className={styles.heroRight}>
+              <div className={styles.glassCard}>
+                <div className={styles.cardHeader}>
+                  <h3>Check Eligibility</h3>
+                  <p>Get instant response on WhatsApp</p>
+                </div>
+                
+                <form onSubmit={handleCheckEligibility} className={styles.eligibilityForm}>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="country">Destination Country</label>
+                    <select 
+                      id="country" 
+                      value={targetCountry} 
+                      onChange={(e) => setTargetCountry(e.target.value)}
+                      className={styles.formSelect}
+                      required
+                    >
+                      <option value="">-- Choose Destination --</option>
+                      <option value="UK">United Kingdom (UK)</option>
+                      <option value="Canada">Canada</option>
+                      <option value="USA">United States (USA)</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Finland">Finland</option>
+                    </select>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label htmlFor="visa">Visa Category</label>
+                    <select 
+                      id="visa" 
+                      value={visaType} 
+                      onChange={(e) => setVisaType(e.target.value)}
+                      className={styles.formSelect}
+                      required
+                    >
+                      <option value="">-- Select Visa Type --</option>
+                      <option value="Student Visa">🎓 Student Visa</option>
+                      <option value="Tourist Visa">✈️ Tourist Visa</option>
+                      <option value="Business Visa">💼 Business Visa</option>
+                      <option value="Work Permit">🛠️ Work Permit</option>
+                      <option value="Family Visa">🏠 Family Visa</option>
+                      <option value="PR Services">🌏 PR Services</option>
+                    </select>
+                  </div>
+
+                  <div className={styles.formGroup}>
+                    <label htmlFor="phone">Phone Number (Optional)</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      placeholder="e.g., +92 300 1234567" 
+                      value={userPhone}
+                      onChange={(e) => setUserPhone(e.target.value)}
+                      className={styles.formInput}
+                    />
+                  </div>
+
+                  <button type="submit" className={styles.submitBtn}>
+                    Instant Check <span>↗</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
