@@ -22,6 +22,16 @@
   gap: 20px;
 }
 
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.topbarIcon {
+  color: var(--accent-color);
+}
+
 .nav {
   background-color: var(--white);
   padding: 15px 0;

@@ -1,0 +1,245 @@
+.blogPage {
+  background-color: var(--bg-light);
+  min-height: 100vh;
+}
+
+.pageHeader {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+  border-bottom: 4px solid var(--accent-color);
+}
+
+.pageHeader h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: var(--font-serif);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.pageHeader p {
+  opacity: 0.8;
+  font-size: 1.1rem;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.postCard {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.postCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 200px;
+}
+
+.postImage {
+  object-fit: cover;
+}
+
+.postContent {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.postMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.categoryBadge {
+  background-color: rgba(255, 180, 0, 0.15);
+  color: var(--accent-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.readTime {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.postContent h2 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  font-family: var(--font-serif);
+  line-height: 1.4;
+  color: var(--primary-color);
+}
+
+.postContent p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.readMoreLink {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  align-self: flex-start;
+}
+
+.readMoreLink:hover {
+  color: var(--accent-color);
+}
+
+/* Detail Page Layout */
+.detailContainer {
+  background-color: #fff;
+  max-width: 800px;
+  margin: -50px auto 80px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.detailImageWrapper {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.detailImage {
+  object-fit: cover;
+}
+
+.detailBody {
+  padding: 50px;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+
+.backBtn:hover {
+  color: var(--accent-color);
+}
+
+.detailMeta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.metaItem {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detailTitle {
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  line-height: 1.25;
+  font-family: var(--font-serif);
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+
+.articleContent {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.articleContent h3 {
+  font-size: 1.3rem;
+  margin: 35px 0 15px;
+  font-family: var(--font-serif);
+  color: var(--primary-color);
+}
+
+.articleContent p {
+  margin-bottom: 20px;
+}
+
+.articleContent ul, .articleContent ol {
+  margin-bottom: 25px;
+  padding-left: 20px;
+}
+
+.articleContent li {
+  margin-bottom: 10px;
+}
+
+.ctaBox {
+  background-color: var(--bg-light);
+  border-left: 4px solid var(--accent-color);
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.ctaBox h4 {
+  color: var(--primary-color);
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.ctaBox p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+@media (max-width: 992px) {
+  .detailContainer {
+    margin-top: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .detailBody {
+    padding: 30px 20px;
+  }
+  
+  .detailImageWrapper {
+    height: 250px;
+  }
+}

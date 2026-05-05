@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Mail, Phone, Clock } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -14,9 +15,18 @@ export default function Navbar() {
       <div className={styles.topBar}>
         <div className={`container ${styles.topBarContent}`}>
           <div className={styles.contactInfo}>
-            <span>📧 starwaytrader@gmail.com</span>
-            <span>📞 03201173129</span>
-            <span className={styles.hideMobile}>🕒 Mon - Fri 11am to 7pm</span>
+            <div className={styles.contactItem}>
+              <Mail size={14} className={styles.topbarIcon} />
+              <span>starwaytrader@gmail.com</span>
+            </div>
+            <div className={styles.contactItem}>
+              <Phone size={14} className={styles.topbarIcon} />
+              <span>03201173129</span>
+            </div>
+            <div className={`${styles.contactItem} ${styles.hideMobile}`}>
+              <Clock size={14} className={styles.topbarIcon} />
+              <span>Mon - Fri 11am to 7pm</span>
+            </div>
           </div>
           <div className={styles.socials}>
             {/* Social links can be added here */}
@@ -36,6 +46,7 @@ export default function Navbar() {
               <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
               <li><Link href="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
               <li><Link href="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+              <li><Link href="/blog" onClick={() => setIsOpen(false)}>Blogs</Link></li>
               <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
             </ul>
             <Link href="/contact" className={`btn-primary ${styles.mobileApplyBtn}`} onClick={() => setIsOpen(false)}>Apply Now</Link>
