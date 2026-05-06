@@ -266,10 +266,13 @@ export default function Home() {
             {[
               { name: "Germany", code: "de", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa"] },
               { name: "UK", code: "gb", services: ["Visitor Visa", "Student Visa & Admission", "Immigration", "Family Visa"] },
+              { name: "Saudi Arabia", code: "sa", services: ["Tourist Visa", "Work Visa", "Family Visa", "Business Setup"] },
               { name: "Qatar", code: "qa", services: ["Visitor Visa", "Work Visa", "Freelance Visa", "Business Setup"] },
               { name: "Australia", code: "au", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
+              { name: "Azerbaijan", code: "az", services: ["Tourist Visa", "Work Visa", "Business Visa"] },
               { name: "USA", code: "us", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa", "Business Visa"] },
               { name: "Canada", code: "ca", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
+              { name: "Uzbekistan", code: "uz", services: ["Tourist Visa", "Work Visa", "Business Visa"] },
               { name: "France", code: "fr", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] },
               { name: "Finland", code: "fi", services: ["Visitor Visa", "Student Visa & Admission", "Work Visa - H1B", "Business Visa"] }
             ].map((country, i) => (
