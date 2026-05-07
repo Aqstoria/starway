@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Mail, Phone, Clock } from 'lucide-react';
 import styles from './Navbar.module.css';
@@ -9,6 +9,18 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  // Lock scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <header className={styles.header}>
@@ -41,6 +53,12 @@ export default function Navbar() {
             <span className={styles.logoSubText}>IMMIGRATION</span>
           </Link>
           
+          {/* Backdrop Overlay */}
+          <div 
+            className={`${styles.backdrop} ${isOpen ? styles.backdropActive : ''}`} 
+            onClick={() => setIsOpen(false)}
+          />
+
           <div className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>
             <ul className={styles.navLinks}>
               <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
@@ -52,7 +70,7 @@ export default function Navbar() {
             <Link href="/contact" className={`btn-primary ${styles.mobileApplyBtn}`} onClick={() => setIsOpen(false)}>Apply Now</Link>
           </div>
           
-          <button className={`${styles.mobileToggle} ${isOpen ? styles.toggleActive : ''}`} onClick={toggleMenu}>
+          <button className={`${styles.mobileToggle} ${isOpen ? styles.toggleActive : ''}`} onClick={toggleMenu} aria-label="Toggle Menu">
             <span></span>
             <span></span>
             <span></span>
